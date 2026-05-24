@@ -76,3 +76,4 @@ C:\Users\lamh\source\repos\CoffeShop\CoffeShop\obj\Debug\net8.0\refint\CoffeShop
 C:\Users\lamh\source\repos\CoffeShop\CoffeShop\obj\Debug\net8.0\CoffeShop.pdb
 C:\Users\lamh\source\repos\CoffeShop\CoffeShop\obj\Debug\net8.0\CoffeShop.genruntimeconfig.cache
 C:\Users\lamh\source\repos\CoffeShop\CoffeShop\obj\Debug\net8.0\ref\CoffeShop.dll
+C:\Users\lamh\source\repos\CoffeShop\CoffeShop\obj\Debug\net8.0\CoffeShop.sourcelink.json

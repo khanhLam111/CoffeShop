@@ -1,6 +1,4 @@
-﻿
-using coffeeshop.Models.interfaces;
-
+﻿using coffeeshop.Models.interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace coffeeshop.Controllers
@@ -12,9 +10,25 @@ namespace coffeeshop.Controllers
         {
             this.productRepository = productRepository;
         }
-        public ActionResult Shop() {
+
+        public ActionResult Shop()
+        {
             return View(productRepository.GetProducts());
         }
-         
+
+        public IActionResult Detail(int id)
+        {
+            // Tìm sản phẩm theo ID từ Repository
+            var product = productRepository.GetProductDetail(id);
+
+            // Nếu tìm thấy sản phẩm, trả về View cùng dữ liệu sản phẩm đó
+            if (product != null)
+            {
+                return View(product);
+            }
+
+            // Nếu không thấy (ID sai), trả về trang lỗi 404
+            return NotFound();
+        }
     }
 }

@@ -1,0 +1,9 @@
+﻿@model CoffeShop.Models.Product
+
+<h2>Chi tiết sản phẩm</h2>
+<div>
+    <img src="@Model.ImageUrl" style="width:300px;" alt="@Model.Name" />
+    <h3>@Model.Name</h3>
+    <p>@Model.Detail</p>
+    <h5>Giá: @Model.Price.ToString("C")</h5>
+</div>
