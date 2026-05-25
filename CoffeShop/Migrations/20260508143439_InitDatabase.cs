@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+using CoffeShop.Data;
 #nullable disable
 
 namespace CoffeShop.Migrations

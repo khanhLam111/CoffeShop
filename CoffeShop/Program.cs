@@ -1,26 +1,22 @@
-using coffeeshop.Data;
 using coffeeshop.Models.Services;
-using coffeeshop.Models.interfaces;
+using CoffeShop.Data;
+using CoffeShop.Models.Interfaces;
+
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- TẤT CẢ SERVICES PHẢI ĐẶT Ở ĐÂY (TRƯỚC var app = builder.Build()) ---
-
 builder.Services.AddControllersWithViews();
 
-// 1. Đăng ký DbContext (Chỉ dùng 1 dòng này, đúng tên "DefaultConnection")
+// Đăng ký DbContext
 builder.Services.AddDbContext<CoffeeshopDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 2. Đăng ký Repository
+// Đăng ký Repository
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-// -----------------------------------------------------------------------
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

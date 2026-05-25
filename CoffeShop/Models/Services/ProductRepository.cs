@@ -1,5 +1,6 @@
-﻿using coffeeshop.Data;
-using coffeeshop.Models.interfaces;
+﻿using CoffeShop.Data;                  
+using CoffeShop.Models.Interfaces;
+using CoffeShop.Models;
 
 namespace coffeeshop.Models.Services
 {
@@ -26,9 +27,5 @@ namespace coffeeshop.Models.Services
         {
             return dbContext.Products.Where(p => p.IsTrendingProduct).ToList();
         }
-
-     
-
-       
     }
 }

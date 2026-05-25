@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using coffeeshop.Data;
-using coffeeshop.Models;
+﻿using CoffeShop.Models;
 
-namespace coffeeshop.Models.interfaces // Chú ý: viết thường
+namespace CoffeShop.Models.Interfaces
 {
     public interface IProductRepository
     {
@@ -11,3 +9,4 @@ namespace coffeeshop.Models.interfaces // Chú ý: viết thường
         IEnumerable<Product> GetTrendingProducts();
     }
 }
+

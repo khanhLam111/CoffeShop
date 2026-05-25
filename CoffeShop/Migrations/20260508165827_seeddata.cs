@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+using CoffeShop.Data;
 #nullable disable
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
