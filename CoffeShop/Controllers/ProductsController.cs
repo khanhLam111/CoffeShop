@@ -1,34 +1,35 @@
 ﻿
-using CoffeShop.Models;
-
+using CoffeShop.Data;
 using Microsoft.AspNetCore.Mvc;
-using CoffeShop.Models.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 namespace CoffeShop.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IProductRepository productRepository;
+        private readonly CoffeeshopDbContext _context;
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(CoffeeshopDbContext context)
         {
-            this.productRepository = productRepository;
+            _context = context;
         }
 
-        public ActionResult Shop()
+        // Trang danh sách Shop
+        public IActionResult Shop()
         {
-            return View(productRepository.GetProducts());
+            var products = _context.Products.ToList();
+            return View(products);
         }
 
+        // Trang chi tiết sản phẩm
         public IActionResult Detail(int id)
         {
-            var product = productRepository.GetProductDetail(id);
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
 
-            if (product != null)
-            {
-                return View(product);
-            }
+            if (product == null)
+                return NotFound();
 
-            return NotFound();
+            return View(product);
         }
     }
 }
