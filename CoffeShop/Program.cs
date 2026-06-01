@@ -15,6 +15,7 @@ builder.Services.AddDbContext<CoffeeshopDbContext>(options =>
 // Đăng ký Repository
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>(sp => ShoppingCartRepository.GetCart(sp)); // ✅ Thêm
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();

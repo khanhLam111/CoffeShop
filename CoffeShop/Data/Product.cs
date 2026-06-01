@@ -1,4 +1,4 @@
-﻿namespace coffeeshop.Data
+﻿namespace Coffeshop.Data
 {
     public class Product
     {
